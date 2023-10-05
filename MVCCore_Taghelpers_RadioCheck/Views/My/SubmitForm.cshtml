@@ -1,0 +1,34 @@
+﻿@model MyViewModel
+<h2>My Registration Form</h2>
+
+<form asp-controller="My" asp-action="SubmitForm" method="post">
+    <h3>Gender</h3>
+    <div>
+        <input asp-for="Gender" type="radio" value="Male" id="Male" />
+        <label for="Male">Male</label>
+    </div>
+    <div>
+        <input asp-for="Gender" type="radio" value="Female" id="Female" />
+        <label for="Female">Female</label>
+    </div>
+
+    <h3>Is Graduated?</h3>
+    <div>
+        <input asp-for="IsGraduated" type="checkbox" value="Graduated" name="IsGraduated" id="Yes" />
+        <label for="IsGraduated" name="lblGraduate" value="Graduated">Are you a Graduate?</label>
+    </div>
+  @* <div>
+        <input asp-for="IsGraduated" type="checkbox" id="No" />
+        <label for="IsGraduated">PG</label>
+    </div>*@
+    <button type="submit">Submit</button>
+</form>
+@if(ViewBag.Gender!=null && ViewBag.Graduate!=null)
+{
+     <h2>Gender: @ViewBag.Gender</h2>
+ 
+     <h2>IsGraduated :@ViewBag.Graduate </h2>
+     <h2> </h2>
+  
+   
+}
